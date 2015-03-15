@@ -1,15 +1,15 @@
 class SkillsController < ApplicationController
 
-  def index 
-    @skills = Unirest.get("").body
+  def show 
+    @skills = Unirest.get("http://localhost:3000/skills/#{:id}.json").body
   end
 
-  def edit 
+  def update
+    @skills = Unirest.patch("http://localhost:3000/skills/#{:id}.json", :headers => {"Accept" => "application/json"}, :parameters => :skill_name => params[:skill_name]}).body
+    redirect_to skills_path
+  end 
 
-  end
-
-  def create
-    @skills = Unirest.post("http://localhost:3000/characters.json", :bio => params[:bio]}).body
-    redirect_to _path(@character["id"])
+  def edit
+  
   end 
 end
