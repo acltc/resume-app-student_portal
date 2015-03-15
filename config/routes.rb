@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  
 
-
-
-
-
+  devise_for :users
+root :to => 'students#show'
 
 
   get '/student/:id' => 'students#show', :as => :students 
