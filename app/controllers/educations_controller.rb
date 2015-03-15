@@ -1,6 +1,6 @@
 class EducationsController < ApplicationController
 	def show
-		# @education = Unirest.get("").body
+		@education = Education.find(params[:id])
 	end
 
 	
