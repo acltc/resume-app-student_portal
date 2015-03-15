@@ -4,4 +4,24 @@ class EducationsController < ApplicationController
 	end
 
 	
+	def edit
+		
+	end
+
+	def new
+		
+	end
+
+	def create
+		@education = Unirest.post("http://localhost:3000/educations.json", 
+			:headers => {"Accept" => "application/json"}, 
+			:parameters => {
+				:degree => params[:degree], 
+				:university_name => params[:university_name], 
+				:start_date => params[:start_date],
+				:end_date => params[:end_date]}).body
+
+		redirect_to education_path(@education["id"])
+	end
+
 end
