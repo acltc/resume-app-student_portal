@@ -1,6 +1,6 @@
 class EducationsController < ApplicationController
 	def show
-	# 	@education = 
+		# @education = Unirest.get("").body
 	end
 
 	
