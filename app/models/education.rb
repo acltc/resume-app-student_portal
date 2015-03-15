@@ -9,7 +9,7 @@ end
 
 
 def self.find(id)
-		education_hash = Unirest.get("").body
+		education_hash = Unirest.get("http://localhost:3000/educations/#{id}.json").body
 		@education = Education.new(education_hash)
 	end
 
