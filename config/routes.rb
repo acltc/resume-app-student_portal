@@ -28,3 +28,5 @@ root :to => 'students#show'
   post '/education' => 'educations#create'
   patch '/educations/:id' => 'educations#update'
   delete '/education/:id' => 'educations#destroy'
+
+end
