@@ -1,4 +1,5 @@
-<% form_tag '/skills/#{@skills["id"]}', :method => :patch do %>
+
+<% form_tag '/skills' do %>
 
   <%= label_tag :skill %>
   <%= text_field_tag :skill_name, @skill["skill_name"] %>

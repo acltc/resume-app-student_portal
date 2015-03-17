@@ -1,29 +1,25 @@
 class SkillsController < ApplicationController
-<<<<<<< HEAD
 
-  def show 
-    @skills = Unirest.get("http://localhost:3000/skills/#{:id}.json").body
+  def index
+    @student = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
   end
 
+  def edit
+    @skill = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
+  
+  end 
+
   def update
-    @skills = Unirest.patch("http://localhost:3000/skills/#{:id}.json", :headers => {"Accept" => "application/json"}, :parameters => :skill_name => params[:skill_name]}).body
+    @skills = Unirest.patch("http://localhost:3000/students/#{params[:id]}.json", :headers => {"Accept" => "application/json"}, :parameters => {:skill_name => params[:skill_name]}).body
     redirect_to skills_path
   end 
 
-  def edit
-  
-  end 
-=======
-	def show
+  def new
 
+  end
 
-	end
-
-	def edit
-
-
-	end
-
-
->>>>>>> 1bee11237d0dcdffde30b78e6d92cbfdd21ea319
+  def create
+    @skills = Unirest.post("http://localhost:3000/students/#{params[:id]}.json", :headers => {"Accept" => "application/json"}, :parameters => {:skill_name => params[:skill_name]}).body
+    redirect_to skills_path
+  end
 end

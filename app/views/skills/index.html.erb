@@ -1,0 +1,9 @@
+<h1><%= @student["first_name"] %></h1>
+
+<h2> Skills: </h2> 
+
+<% @student["skills"].each do |skill| %>
+  <ul>
+    <li> <%= skill["skill_name"] %> </li>
+  </ul>
+  <% end %>
