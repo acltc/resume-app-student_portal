@@ -1,11 +1,8 @@
 class StudentsController < ApplicationController
-
-
 	def show
 		 @student = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
 
 	end
-
 
 	def edit
 		@student = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
@@ -29,6 +26,7 @@ class StudentsController < ApplicationController
     	  redirect_to student_path(@student["id"])
 	end
 
+
 	def update
 		@student = Unirest.patch("http://localhost:3000/students/#{params[:id]}.json", 
 			:headers => {"Accept" => "application/json"}, 
@@ -47,5 +45,5 @@ class StudentsController < ApplicationController
     	  redirect_to students_path
 
 	end
-
+	
 end
