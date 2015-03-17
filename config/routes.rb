@@ -7,7 +7,6 @@ root :to => 'students#show'
   get '/students/:id' => 'students#show', :as => :students 
   get '/students/:id/edit' => 'students#edit'
   patch '/students/:id' => 'students#update' 
-
   
   get '/skills/' => 'skills#index', :as => :skills
   get 'skills/new' => 'skills#new'
