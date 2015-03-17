@@ -15,7 +15,7 @@ def self.find(id)
 	end
 
 def self.all
-		educations_hash = Unirest.get("http://localhost:3000/educations.json").body["deities"]
+		educations_hash = Unirest.get("http://localhost:3000/educations.json").body["educations"]
 		@educations = []
 		educations_hash.each do |education_hash|
 			@educations << Education.new(education_hash)
@@ -24,7 +24,20 @@ def self.all
 		@educations
 	end
 
+# def self.create()
+# 	education_hash = Unirest.post("http://localhost:3000/educations.json", 
+# 			:headers => {"Accept" => "application/json"}, 
+# 			:parameters => {
+# 				:degree => params[:degree], 
+# 				:university_name => params[:university_name], 
+# 				:start_date => params[:start_date],
+# 				:end_date => params[:end_date]}).body
 
+# 			@education = Education.new(education_hash)
+# 			@education.save
+
+# 		redirect_to education_path(@education["id"])
+# end
 
 
 end

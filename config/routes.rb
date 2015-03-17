@@ -22,11 +22,10 @@ root :to => 'students#show'
   patch '/experiences/:id' => 'experiences#update'
   delete '/experiences/:id' => 'experiences#destroy'
 
-  get '/education' => 'educations#index', :as => :educations
-  get 'education' => 'educations#new'
-  get '/education/:id/edit' => 'educations#edit'
-  post '/education' => 'educations#create'
+  get '/educations' => 'educations#index', :as => :educations
+  get 'educations' => 'educations#new'
+  get '/educations/:id/edit' => 'educations#edit'
+  post '/educations' => 'educations#create'
   patch '/educations/:id' => 'educations#update'
-  delete '/education/:id' => 'educations#destroy'
-
+  delete '/educations/:id' => 'educations#destroy'
 end
