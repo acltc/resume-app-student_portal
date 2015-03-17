@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 root :to => 'students#show'
 
 
-  get '/student/:id' => 'students#show', :as => :students 
-  get '/student/:id/edit' => 'students#edit'
-  patch '/student/:id' => 'students#update' 
+  get '/students/:id' => 'students#show', :as => :students 
+  get '/students/:id/edit' => 'students#edit'
+  patch '/students/:id' => 'students#update' 
+
   
   get '/skills/' => 'skills#index', :as => :skills
   get 'skills/new' => 'skills#new'
@@ -22,10 +23,11 @@ root :to => 'students#show'
   patch '/experiences/:id' => 'experiences#update'
   delete '/experiences/:id' => 'experiences#destroy'
 
-  get '/education' => 'educations#index', :as => :educations
-  get '/education' => 'educations#new'
-  get '/education/:id/edit' => 'educations#edit'
-  post '/education' => 'educations#create'
-  patch '/education/:id' => 'educations#update'
-  delete '/education/:id' => 'educations#destroy'
+
+  get '/educations' => 'educations#index', :as => :educations
+  get 'educations' => 'educations#new'
+  get '/educations/:id/edit' => 'educations#edit'
+  post '/educations' => 'educations#create'
+  patch '/educations/:id' => 'educations#update'
+  delete '/educations/:id' => 'educations#destroy'
 end

@@ -1,0 +1,38 @@
+
+<%= form_tag "/students/#{@student['id']}", :method => :patch do %>
+  <%= label_tag :first_name %>
+  <%= text_field_tag :first_name, @student['first_name'] %>
+
+  <%= label_tag :last_name %>
+  <%= text_field_tag :last_name, @student['last_name'] %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email, @student['email'] %>
+
+
+  <%= label_tag :phone_number %>
+  <%= telephone_field_tag(:phone_number, @student['phone_number'])  %>
+
+  <%= label_tag :linkedin %>
+  <%= url_field_tag(:linkedin, @student['linkedin']) %>
+
+  <%= label_tag :twitter %>
+  <%= url_field_tag(:twitter, @student['twitter']) %>
+
+  <%= label_tag :blog %>
+  <%= url_field_tag(:blog, @student['blog']) %>
+
+  <%= label_tag :online_resume %>
+  <%= text_field_tag :online_resume, @student['online_resume'] %>
+
+  <%= label_tag :github %>
+  <%= url_field_tag(:github, @student['github']) %>
+
+  <%= label_tag :photo %>
+  <%= text_field_tag :photo, @student['photo'] %>
+
+  <%= label_tag :short_bio %>
+  <%= text_field_tag :short_bio, @student['short_bio'] %>
+
+  <%= submit_tag "Submit" %>
+<% end %>

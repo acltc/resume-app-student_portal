@@ -1,5 +1,4 @@
 class SkillsController < ApplicationController
-<<<<<<< HEAD
 
   def show 
     @skills = Unirest.get("http://localhost:3000/skills/#{:id}.json").body
@@ -13,17 +12,5 @@ class SkillsController < ApplicationController
   def edit
   
   end 
-=======
-	def show
 
-
-	end
-
-	def edit
-
-
-	end
-
-
->>>>>>> 1bee11237d0dcdffde30b78e6d92cbfdd21ea319
 end
