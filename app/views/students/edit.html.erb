@@ -7,26 +7,26 @@
   <%= text_field_tag :last_name, @student['last_name'] %>
 
   <%= label_tag :email %>
-  <%= email_field(:email, @student['email']) %>
+  <%= email_field_tag :email, @student['email'] %>
 
 
   <%= label_tag :phone_number %>
-  <%= telephone_field(:phone_number, @student['phone_number'])  %>
+  <%= telephone_field_tag(:phone_number, @student['phone_number'])  %>
 
   <%= label_tag :linkedin %>
-  <%= url_field(:linkedin, @student['linkedin']) %>
+  <%= url_field_tag(:linkedin, @student['linkedin']) %>
 
   <%= label_tag :twitter %>
-  <%= url_field(:twitter, @student['twitter']) %>
+  <%= url_field_tag(:twitter, @student['twitter']) %>
 
   <%= label_tag :blog %>
-  <%= url_field(:blog, @student['blog']) %>
+  <%= url_field_tag(:blog, @student['blog']) %>
 
   <%= label_tag :online_resume %>
   <%= text_field_tag :online_resume, @student['online_resume'] %>
 
   <%= label_tag :github %>
-  <%= url_field(:github, @student['github']) %>
+  <%= url_field_tag(:github, @student['github']) %>
 
   <%= label_tag :photo %>
   <%= text_field_tag :photo, @student['photo'] %>
