@@ -23,8 +23,9 @@ root :to => 'students#show'
   delete '/experiences/:id' => 'experiences#destroy'
 
   get '/education' => 'educations#index', :as => :educations
-  get 'education' => 'educations#new'
+  get '/education' => 'educations#new'
   get '/education/:id/edit' => 'educations#edit'
   post '/education' => 'educations#create'
-  patch '/educations/:id' => 'educations#update'
+  patch '/education/:id' => 'educations#update'
   delete '/education/:id' => 'educations#destroy'
+end

@@ -5,7 +5,7 @@ class EducationsController < ApplicationController
 
 	
 	def edit
-		
+		@education = Education.find(params[:id])
 	end
 
 	def new
@@ -13,7 +13,7 @@ class EducationsController < ApplicationController
 	end
 
 	def create
-		@education = Unirest.post("http://localhost:3000/educations.json", 
+		@education = Unirest.post("http://localhost:3000/students/#{params[:id]}.json", 
 			:headers => {"Accept" => "application/json"}, 
 			:parameters => {
 				:degree => params[:degree], 
