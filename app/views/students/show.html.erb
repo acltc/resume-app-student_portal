@@ -1,15 +1,38 @@
-<h1> Personal Information </h1>
-<h2><%= @student["first_name"] %></h2>
-<h2><%= @student["last_name"] %></h2>
-<h2><%= @student["email"] %></h2>
-<h2><%= @student["phone_number"] %></h2>
-<h2><%= @student["linkedin"] %></h2>
-<h2><%= @student["twitter"] %></h2>
-<h2><%= @student["blog"] %></h2>
-<h2><%= @student["online_resume"] %></h2>
-<h2><%= @student["github"] %></h2>
-<h2><%= @student["photo"] %></h2>
-<h2><%= @student["short_bio"] %></h2> <a href="/students/<%= @student['id']%>/edit">Edit Your Personal Information</a>
-<h1> Education </h1>
-
-<h1> Experience </h1>
+<h1>PERSONAL INFORMAION: </h1>
+<h2>FIRST NAME: <%= @student["first_name"] %></h2>
+<h2>LAST NAME: <%= @student["last_name"] %></h2>
+<h2>EMAIL: <%= @student["email"] %></h2>
+<h2>PHONE: <%= @student["phone_number"] %></h2>
+<h2>LINKEDIN ACCOUNT: <%= @student["linkedin"] %></h2>
+<h2>TWITTER ACCOUNT: <%= @student["twitter"] %></h2>
+<h2>BLOG: <%= @student["blog"] %></h2>
+<h2>ONLINE RESUME`: <%= @student["online_resume"] %></h2>
+<h2>GITHUB ACCOUNT: <%= @student["github"] %></h2>
+<h2>PHOTO: <%= @student["photo"] %></h2>
+<h2>SHORT BIO: <%= @student["short_bio"] %></h2> <a href="/students/<%= @student['id']%>/edit">Edit Your Personal Information</a>
+<hr>
+<h1> EDUCATION(S): </h1>
+<% education_counter = @student["educations"].count %>
+<% education_counter2 = 0 %>
+<% education_counter.times do %>
+	<h2>UNIVERSITY NAME: <%= @student["educations"][education_counter2]["university_name"] %></h2>
+	<h2>ATTENDED FROM: <%= @student["educations"][education_counter2]["start_date"] %></h2>
+	<h2>UNTIL: <%= @student["educations"][education_counter2]["end_date"] %></h2>
+	<h2>DEGREE EARNED: <%= @student["educations"][education_counter2]["degrees"] %></h2>
+	<% if @student["educations"][education_counter2]["details"].count > 0 %>
+		<h2>EDUCATION DETAILS:</h2> 
+		<% education_details_counter = @student["educations"][education_counter2]["details"].count %>
+		<% education_details_counter2 = 0 %>
+			<% education_details_counter.times do %>
+			 	<p><h4><%= @student["educations"][education_counter2]["details"][education_details_counter2]["detail"] %>
+				</h4>
+				<a href="education_details/<% @student["educations"][education_counter2]["details"][education_details_counter2]["id"] %>/edit">Edit this detail</a></p>
+				<% education_details_counter2 += 1 %>
+			<% end %>
+			</h2>
+	<% end %>
+	<a href="/educations/<%= @student["educations"][education_counter2]["id"] %>/edit">Edit this education</a>
+	<hr>
+	<% education_counter2 += 1 %>
+<% end %>
+<h1> EXPERIENCE(S): </h1>
