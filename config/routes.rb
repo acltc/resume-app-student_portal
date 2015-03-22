@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 root :to => 'students#show'
 
-
+  get '/students/new' => 'students#new'
   get '/students/:id' => 'students#show', :as => :students 
   get '/students/:id/edit' => 'students#edit'
   patch '/students/:id' => 'students#update' 
