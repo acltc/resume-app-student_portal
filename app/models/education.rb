@@ -11,16 +11,8 @@ def initialize(hash)
 end
 
 def self.find(id)
-		educations_hash = Unirest.get("http://localhost:3000/students/#{id}.json").body
-			education_hash = educations_hash['educations']
-			@education = nil
-			education_hash.each do |education|
-				@education = Education.new(education) if education['id'] == id
-			end
-
-
-		@education
-
+		education_hash = Unirest.get("http://localhost:3000/educations/#{id}.json").body
+		@education = Education.new(education_hash)
 	end
 
 # def self.all
