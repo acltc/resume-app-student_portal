@@ -22,6 +22,7 @@ root :to => 'students#show'
   patch '/experiences/:id' => 'experiences#update'
   delete '/experiences/:id' => 'experiences#destroy'
 
+
   get '/educations' => 'educations#index', :as => :educations
   get 'educations' => 'educations#new'
   get '/educations/:id/edit' => 'educations#edit'

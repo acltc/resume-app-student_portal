@@ -1,12 +1,13 @@
 class Education
 
-attr_reader :degree, :university_name, :start_date, :end_date
+attr_reader :id, :degree, :university_name, :start_date, :end_date
 
 def initialize(hash)
-	@degree = ["degree"]
-	@university_name = ["university_name"]
-	@start_date = ["start_date"]
-	@end_date = ["end_date"]
+	@id = hash['id']
+	@degree = hash["degree"]
+	@university_name = hash["university_name"]
+	@start_date = hash["start_date"]
+	@end_date = hash["end_date"]
 end
 
 def self.find(id)
@@ -14,15 +15,15 @@ def self.find(id)
 		@education = Education.new(education_hash)
 	end
 
-def self.all
-		educations_hash = Unirest.get("http://localhost:3000/educations.json").body["educations"]
-		@educations = []
-		educations_hash.each do |education_hash|
-			@educations << Education.new(education_hash)
-		end
+# def self.all
+# 		educations_hash = Unirest.get("http://localhost:3000/educations.json").body["educations"]
+# 		@educations = []
+# 		educations_hash.each do |education_hash|
+# 			@educations << Education.new(education_hash)
+# 		end
 		
-		@educations
-	end
+# 		@educations
+# 	end
 
 # def self.create()
 # 	education_hash = Unirest.post("http://localhost:3000/educations.json", 

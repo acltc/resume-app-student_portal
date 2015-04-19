@@ -9,6 +9,7 @@ class SkillsController < ApplicationController
   
   end 
 
+
   def update
     @skills = Unirest.patch("http://localhost:3000/students/#{params[:id]}.json", :headers => {"Accept" => "application/json"}, :parameters => {:skill_name => params[:skill_name]}).body
     redirect_to skills_path
@@ -22,4 +23,5 @@ class SkillsController < ApplicationController
     @skills = Unirest.post("http://localhost:3000/students/#{params[:id]}.json", :headers => {"Accept" => "application/json"}, :parameters => {:skill_name => params[:skill_name]}).body
     redirect_to skills_path
   end
+
 end
