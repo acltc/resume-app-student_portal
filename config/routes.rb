@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 root :to => 'students#show'
 
+  get '/students' => 'students#index'
   get '/students/new' => 'students#new'
-  get '/students/:id' => 'students#show', :as => :students 
+  get '/students/:id' => 'students#show'
   get '/students/:id/edit' => 'students#edit'
   patch '/students/:id' => 'students#update' 
   
