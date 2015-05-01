@@ -5,8 +5,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
-    p @student["educations"]
+    @student = Student.find(params[:id])
   end
 
   def edit
