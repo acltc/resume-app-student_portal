@@ -35,4 +35,23 @@ class Student
     return Student.new(student)
   end
 
+  def update(student_hash)
+    p @id
+    student = Unirest.patch("#{ENV["API_BASE_URL"]}/students/#{@id}.json", 
+    :headers => {"Accept" => "application/json"}, 
+    :parameters => 
+    {:first_name => student_hash[:first_name], 
+    :last_name => student_hash[:last_name], 
+    :email => student_hash[:email], 
+    :phone_number => student_hash[:phone_number], 
+    :linkedin => student_hash[:linkedin], 
+    :twitter => student_hash[:twitter], 
+    :blog => student_hash[:blog], 
+    :online_resume => student_hash[:online_resume], 
+    :github => student_hash[:github], 
+    :photo => student_hash[:photo], 
+    :short_bio => student_hash[:short_bio]}).body
+    return Student.find(@id)
+  end
+
 end
