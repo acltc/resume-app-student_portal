@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Unirest.get("http://localhost:3000/students/#{params[:id]}.json").body
+    @student = Student.find(params[:id])
   end
 
   def create
