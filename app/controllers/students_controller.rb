@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
 
   def index
-    @grand_student_hash = Unirest.get("http://localhost:3000/students.json").body
+    @students = Student.all
   end
 
   def show

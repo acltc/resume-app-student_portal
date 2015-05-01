@@ -21,8 +21,17 @@ class Student
     @references = student_hash["references"]
   end
 
+  def self.all
+    grand_students_hash = Unirest.get("#{ENV["API_BASE_URL"]}/students.json").body
+    @students = []
+    grand_students_hash["students"].each do |student|
+      @students << Student.new(student)
+    end
+    return @students
+  end
+
   def self.find(id)
-    student = Unirest.get("http://localhost:3000/students/#{id}.json").body
+    student = Unirest.get("#{ENV["API_BASE_URL"]}/students/#{id}.json").body
     return Student.new(student)
   end
 
