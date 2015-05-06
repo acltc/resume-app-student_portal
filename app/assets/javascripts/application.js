@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kelvin/bootstrap.js
+//= require kelvin/Chart.js
+//= require kelvin/smoothscroll.js
 //= require turbolinks
 //= require_tree .
